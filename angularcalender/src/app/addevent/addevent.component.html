@@ -1,0 +1,22 @@
+  <div class="container">
+    <h1>Add Event</h1>
+    
+    <label  for="user"><b>Title</b></label>
+    <input type="text"  [(ngModel)] = "this.postData.title"  placeholder="Title" id="uname" required>
+
+    <label for="email"><b>Description</b></label>
+    <input type="text" placeholder="Enter Description" id="email" [(ngModel)] = "this.postData.body"  required>
+
+    <label for="email"><b>Choose Doctor</b></label>
+    <select class="custom-select" [(ngModel)] = "this.postData.did">
+      <option disabled="">Choose Doctor</option>
+     
+      <option *ngFor="let doc of this.alldoctors;"  value=" {{ doc.id }}">{{ doc.username }}</option>
+     
+    </select>
+
+    <label for="phone"><b>Date</b></label>
+    <input [(ngModel)] = "this.postData.date"   type="date"  id="email" required>
+
+    <button (click)="addevent()"  class="registerbtn">Register</button>
+  </div><br>

@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from rest_framework.urlpatterns import format_suffix_patterns
 from django.contrib import admin
 from django.urls import include, path
 
@@ -21,7 +22,7 @@ urlpatterns = [
     path('create_event/',include('create_event.urls')),
     path('delete_event/',include('delete_event.urls')),
     path('eventsmanager/',include('eventsmanager.urls')),
-    path('signupmanager/',include('signupmanager.urls')),
+    path('signupmanager/',include('signupmanager.urls' , namespace="signupmanager")),
     path('update_event/',include('update_event.urls')),
     path('usersmanager/',include('usersmanager.urls')),
 ]

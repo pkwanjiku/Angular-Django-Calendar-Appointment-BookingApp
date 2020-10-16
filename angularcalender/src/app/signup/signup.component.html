@@ -1,0 +1,25 @@
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+
+    <label  for="user"><b>UserName</b></label>
+    <input [(ngModel)] = "this.postData.username"  type="text" placeholder="John Doe" id="uname" required>
+
+    <label for="email"><b>Email</b></label>
+    <input [(ngModel)] = "this.postData.email"   type="text" placeholder="Enter Email" id="email" required>
+
+    <label for="phone"><b>Phone</b></label>
+    <input [(ngModel)] = "this.postData.phone"  type="text" placeholder="Enter Phone" id="email" required>
+
+    <label for="email"><b>You are a</b></label>
+    <select class="custom-select" [(ngModel)] = "this.postData.utype" >
+      <option disabled="">Choose One Option</option>
+      <option value="1">Patient</option>
+      <option value="2">Doctor</option>
+    </select>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" [(ngModel)] = "this.postData.password"  placeholder="Enter Password"  id="psw" required>
+
+    <button (click)="insertuser()"  class="registerbtn">Register</button>
+  </div><br>

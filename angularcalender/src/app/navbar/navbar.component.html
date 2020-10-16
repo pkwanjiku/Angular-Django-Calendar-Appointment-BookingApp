@@ -1,0 +1,12 @@
+<mat-toolbar color = "primary" class = "mat-elevation-z8">
+  <span><mat-icon>eco</mat-icon>UpendoClinic</span>
+
+  <div class = "spacer"></div>
+  
+  <div fxLayout="row" fxShow="true" fxShow.gt-sm >
+  <a mat-button  routerLink="/appointment">Appointments</a>
+  <a mat-button  routerLink="/signup">Signup</a>
+  <a mat-raised-button color = "accent"  routerLink="/login">login</a> 
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

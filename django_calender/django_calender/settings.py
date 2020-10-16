@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
 "104.248.143.105"
 ]
-
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -39,6 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'create_event',
+    'delete_event',
+    'eventsmanager',
+    'signupmanager',
+    'usersmanager',
+    'update_event',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +56,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -77,8 +86,17 @@ WSGI_APPLICATION = 'django_calender.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+
+
+        ## uncomment to connect to postgresql, fill in the variables and migrate
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'calender01',
+        #'HOST': '104.248.143.105',
+        #'USERNAME': 'postgres',
+        #'PASSWORD': 'calenderapp',
+        #'PORT': '5432'
     }
 }
 
